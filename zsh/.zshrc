@@ -175,6 +175,9 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+# setup fzf key bindings and fuzzy completition
+source <(fzf --zsh)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 
