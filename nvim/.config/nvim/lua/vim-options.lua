@@ -58,7 +58,6 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Trouble toggle quickfix" })
 vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { desc = " Trouble toggle for loclist" })
-vim.keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", { desc = "Open todos in trouble" })
 
 vim.opt.hlsearch = true
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { desc = "Nohlsearch" })
