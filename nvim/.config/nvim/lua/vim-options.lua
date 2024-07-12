@@ -11,10 +11,10 @@ vim.opt.swapfile = false
 vim.opt.title = false
 
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', { desc = "Move Up" })
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', { desc = "Move Down" })
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>', { desc = "Move Left" })
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', { desc = "Move Right" })
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { desc = "Move Up" })
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", { desc = "Move Down" })
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", { desc = "Move Left" })
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { desc = "Move Right" })
 
 -- Buffers commands
 vim.keymap.set("n", "<C-x>", ":bd<CR>", { desc = "Close current file in buffer" })
@@ -44,22 +44,30 @@ vim.keymap.set("n", "<leader>bo", "<cmd>:GitBlameOpenFileURL<CR>", { desc = "Ope
 
 -- Trouble Plugin
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Toggle Trouble" })
-vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
-  { desc = "Open Trouble for workspace diagnostics" })
-vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
-  { desc = "Open Trouble for document diagnostics" })
+vim.keymap.set(
+	"n",
+	"<leader>xw",
+	"<cmd>TroubleToggle workspace_diagnostics<cr>",
+	{ desc = "Open Trouble workspace diagnostics" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>xd",
+	"<cmd>TroubleToggle document_diagnostics<cr>",
+	{ desc = "Open Trouble document diagnostics" }
+)
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Trouble toggle quickfix" })
-vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Trouble toggle for lsp refs" })
 vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { desc = " Trouble toggle for loclist" })
+vim.keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", { desc = "Open todos in trouble" })
 
 vim.opt.hlsearch = true
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { desc = "Nohlsearch" })
 vim.wo.number = true
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
