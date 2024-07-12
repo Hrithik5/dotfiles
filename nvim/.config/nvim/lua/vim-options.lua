@@ -18,7 +18,7 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { desc = "Move Right" })
 
 -- Buffers commands
 vim.keymap.set("n", "<C-x>", ":bd<CR>", { desc = "Close current file in buffer" })
-vim.keymap.set("n", "<leader>q", ":bw<CR>", { desc = "Close all files in the buffer" })
+vim.keymap.set("n", "<leader>cb", ":bw<CR>", { desc = "Close all files in the buffer" })
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Switch to next buffer" })
 vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Switch to previous buffer" })
 
