@@ -5,16 +5,11 @@ return {
     local lint = require("lint")
 
     lint.linters_by_ft = {
-      javascript = { "eslint_d" },
-      typescript = { "eslint_d" },
-      javascriptreact = { "eslint_d" },
-      typescriptreact = { "eslint_d" },
       python = { "pylint" },
-      go = {""},
-      docker = {"hadolint"},
-      c++ = {"cpplint"},
-      yaml = {"yamllint"}
-
+      go = { "golangci-lint" },
+      docker = { "hadolint" },
+      cpp = { "cpplint" },
+      yaml = { "yamllint" }
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

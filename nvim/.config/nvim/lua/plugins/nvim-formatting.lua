@@ -16,9 +16,9 @@ return {
         graphql = { "prettier" },
         lua = { "stylua" },
         python = { "isort", "black" },
-        go = { "gofumpt","goimports-reviser","golines"},
-        c++ = {"clang-format", "ast-grep"},
-        bash = {"beautysh"},
+        go = { "gofumpt", "goimports-reviser", "golines" },
+        cpp = { "clang-format", "ast-grep" },
+        bash = { "beautysh" },
       },
       format_on_save = {
         lsp_fallback = true,
@@ -36,3 +36,4 @@ return {
     end, { desc = "Format file or range (in visual mode)" })
   end,
 }
+
