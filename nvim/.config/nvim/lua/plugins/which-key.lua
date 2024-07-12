@@ -1,46 +1,76 @@
 return {
-  "folke/which-key.nvim",
-  config = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-    require("which-key").setup({
-      plugins = {
-        marks = true,     -- shows a list of your marks on ' and `
-        registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-        -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-        -- No actual key bindings are created
-        spelling = {
-          enabled = true,   -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-          suggestions = 20, -- how many suggestions should be shown in the list?
-        },
-        presets = {
-          operators = true,    -- adds help for operators like d, y, ...
-          motions = true,      -- adds help for motions
-          text_objects = true, -- help for text objects triggered after entering an operator
-          windows = true,      -- default bindings on <c-w>
-          nav = true,          -- misc bindings to work with windows
-          z = true,            -- bindings for folds, spelling and others prefixed with z
-          g = true,            -- bindings for prefixed with g
-        },
-      },
-      operators = { gc = "Comments" },
-      icons = {
-        breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-        separator = "➜", -- symbol used between a key and it's label
-        group = "+", -- symbol prepended to a group
-      },
-      popup_mappings = {
-        scroll_down = "<c-d>", -- binding to scroll down inside the popup
-        scroll_up = "<c-u>",   -- binding to scroll up inside the popup
-      },
-      window = {
-        border = "none",          -- none, single, double, shadow
-        position = "bottom",      -- bottom, top
-        margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
-        padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-        winblend = 0,             -- value between 0-100 0 for fully opaque and 100 for fully transparent
-        zindex = 1000,            -- positive value to position WhichKey above other floating windows.
-      },
-    })
-  end,
+	"folke/which-key.nvim",
+	config = function()
+		local wk = require("which-key")
+
+		-- Setup WhichKey with your current settings
+		wk.setup({
+			plugins = {
+				marks = true,
+				registers = true,
+				presets = {
+					operators = true,
+					motions = true,
+					text_objects = true,
+					windows = true,
+					nav = true,
+					z = true,
+					g = true,
+				},
+				spelling = {
+					enabled = true,
+					suggestions = 20,
+				},
+			},
+			operators = {
+				gc = "Comments",
+			},
+			icons = {
+				breadcrumb = "»",
+				separator = "➜",
+				group = "+",
+			},
+			popup_mappings = {
+				scroll_down = "<c-d>",
+				scroll_up = "<c-u>",
+			},
+			window = {
+				border = "none",
+				position = "bottom",
+				margin = { 1, 0, 1, 0 },
+				padding = { 1, 2, 1, 2 },
+				winblend = 0,
+				zindex = 1000,
+			},
+		})
+
+		-- Further customization or additions can go here
+		-- For example:
+		-- wk.register({
+		--   ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+		--   ["<leader>g"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+		-- })
+		-- Additional key mappings
+		-- wk.register({
+		--   ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+		--   ["<leader>g"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+		--   ["<leader>c"] = { "<cmd>TodoTelescope<cr>", "Search Todos" },
+		-- })
+		--
+		-- -- Example of grouping key mappings
+		-- wk.register({
+		--   ["<leader>"] = {
+		--     name = "File Operations",
+		--     f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+		--     s = { "<cmd>w<cr>", "Save" },
+		--     q = { "<cmd>q<cr>", "Quit" },
+		--   },
+		--   ["<leader>g"] = {
+		--     name = "Git Operations",
+		--     s = { "<cmd>Git<cr>", "Status" },
+		--     b = { "<cmd>Git blame<cr>", "Blame" },
+		--     c = { "<cmd>Git commit<cr>", "Commit" },
+		--   },
+		-- })
+	end,
 }
