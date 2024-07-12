@@ -24,7 +24,7 @@ return {
 			dashboard.button("ff", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
 			dashboard.button("fs", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
 			dashboard.button("sr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
-			dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
+			dashboard.button("q", "  > Quit NEOVIM", "<cmd>qa<CR>"),
 		}
 
 		-- Send config to alpha
