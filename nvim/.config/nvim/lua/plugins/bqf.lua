@@ -38,20 +38,5 @@ return {
 				},
 			},
 		})
-
-		-- Key mappings for easy access
-		local keymap = vim.api.nvim_set_keymap
-		local opts = { noremap = true, silent = true }
-
-		-- Open Quickfix
-		keymap("n", "<leader>qo", ":copen<CR>", opts)
-		-- Close Quickfix
-		keymap("n", "<leader>qc", ":cclose<CR>", opts)
-		-- Next Quickfix item
-		keymap("n", "<leader>qn", ":cnext<CR>", opts)
-		-- Previous Quickfix item
-		keymap("n", "<leader>qp", ":cprev<CR>", opts)
-		-- Filter with fzf
-		keymap("n", "<leader>qf", ":BqfFzf<CR>", opts)
 	end,
 }
