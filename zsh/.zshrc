@@ -177,6 +177,9 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+#Atuin setup in zsh
+eval "$(atuin init zsh)"
+
 # setup fzf key bindings and fuzzy completition
 source <(fzf --zsh)
 
