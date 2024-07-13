@@ -171,12 +171,14 @@ alias lt="eza --tree --level=2 --long --icons --git"
 
 alias la=tree
 alias cat=bat
-alias c=clear
+alias cl=clear
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+# Enable shell autocompletion
+source <(kubectl completion zsh)
 
 # setup fzf key bindings and fuzzy completition
 source <(fzf --zsh)
