@@ -214,7 +214,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 setopt appendhistory
-bindkey '^R' fzf-history-widget
+
+# Search previous commands from history 
+bindkey 'TAB' fzf-history-widget
 # fzf maaping with cd command
 fcd() {
     local dir
