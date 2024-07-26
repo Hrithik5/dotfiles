@@ -216,7 +216,7 @@ SAVEHIST=1000000
 setopt appendhistory
 
 # Search previous commands from history 
-bindkey 'TAB' fzf-history-widget
+bindkey '^R' fzf-history-widget
 # fzf maaping with cd command
 fcd() {
     local dir
