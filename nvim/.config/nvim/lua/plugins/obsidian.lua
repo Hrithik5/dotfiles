@@ -9,7 +9,7 @@ return {
 	},
 	config = function()
 		require("obsidian").setup({
-			dir = "/Users/hrithikchauhan/Obsidian/Notes", -- default workspace path
+			dir = "/Users/hrithikchauhan/Documents/Obsidian Vault/", -- default workspace path
 			completion = {
 				nvim_cmp = true, -- enable nvim-cmp integration
 			},
@@ -28,15 +28,11 @@ return {
 			workspaces = {
 				{
 					name = "personal",
-					path = "/Users/hrithikchauhan/Obsidian/Notes/personal",
+					path = "/Users/hrithikchauhan/Documents/Obsidian Vault/Brain Dump/",
 				},
 				{
 					name = "work",
-					path = "/Users/hrithikchauhan/Obsidian/Notes/work",
-				},
-				{
-					name = "study",
-					path = "/Users/hrithikchauhan/Obsidian/Notes/study",
+					path = "/Users/hrithikchauhan/Documents/Obsidian Vault/Notes/",
 				},
 			},
 		})
