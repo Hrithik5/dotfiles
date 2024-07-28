@@ -3,7 +3,6 @@ return {
 	config = function()
 		local wk = require("which-key")
 
-		-- Setup WhichKey with your current settings
 		wk.setup({
 			plugins = {
 				marks = true,
@@ -22,19 +21,16 @@ return {
 					suggestions = 20,
 				},
 			},
-			operators = {
-				gc = "Comments",
-			},
 			icons = {
 				breadcrumb = "»",
 				separator = "➜",
 				group = "+",
 			},
-			popup_mappings = {
+			keys = { -- updated from popup_mappings
 				scroll_down = "<c-d>",
 				scroll_up = "<c-u>",
 			},
-			window = {
+			win = { -- updated from window
 				border = "none",
 				position = "bottom",
 				margin = { 1, 0, 1, 0 },
@@ -42,35 +38,34 @@ return {
 				winblend = 0,
 				zindex = 1000,
 			},
+			defer = { -- updated from operators
+				gc = "Comments",
+			},
 		})
 
-		-- Further customization or additions can go here
-		-- For example:
-		-- wk.register({
-		--   ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-		--   ["<leader>g"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-		-- })
-		-- Additional key mappings
-		-- wk.register({
-		--   ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-		--   ["<leader>g"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-		--   ["<leader>c"] = { "<cmd>TodoTelescope<cr>", "Search Todos" },
-		-- })
-		--
-		-- -- Example of grouping key mappings
-		-- wk.register({
-		--   ["<leader>"] = {
-		--     name = "File Operations",
-		--     f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-		--     s = { "<cmd>w<cr>", "Save" },
-		--     q = { "<cmd>q<cr>", "Quit" },
-		--   },
-		--   ["<leader>g"] = {
-		--     name = "Git Operations",
-		--     s = { "<cmd>Git<cr>", "Status" },
-		--     b = { "<cmd>Git blame<cr>", "Blame" },
-		--     c = { "<cmd>Git commit<cr>", "Commit" },
-		--   },
-		-- })
+		-- Register key mappings
+		wk.register({
+			["<leader>"] = {
+				name = "File Operations",
+				f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+				s = { "<cmd>w<cr>", "Save" },
+				q = { "<cmd>q<cr>", "Quit" },
+			},
+			g = {
+				name = "Git Operations",
+				s = { "<cmd>Git<cr>", "Status" },
+				b = { "<cmd>Git blame<cr>", "Blame" },
+				c = { "<cmd>Git commit<cr>", "Commit" },
+			},
+			o = {
+				name = "Obsidian",
+				n = { "<cmd>ObsidianNewNote<CR>", "New Note" },
+				t = { "<cmd>ObsidianToday<CR>", "Today's Note" },
+				y = { "<cmd>ObsidianYesterday<CR>", "Yesterday's Note" },
+				f = { "<cmd>ObsidianSearch<CR>", "Search Notes" },
+				b = { "<cmd>ObsidianBacklinks<CR>", "Backlinks" },
+				l = { "<cmd>ObsidianLink<CR>", "Create Link" },
+			},
+		})
 	end,
 }
