@@ -10,6 +10,9 @@ return {
 	config = function()
 		require("obsidian").setup({
 			dir = "/Users/hrithikchauhan/Documents/Obsidian Vault/", -- default workspace path
+			ui = {
+				enable = false,
+			},
 			completion = {
 				nvim_cmp = true, -- enable nvim-cmp integration
 			},

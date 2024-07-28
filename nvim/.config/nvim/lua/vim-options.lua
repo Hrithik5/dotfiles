@@ -9,6 +9,7 @@ vim.g.mapleader = " "
 
 vim.opt.swapfile = false
 vim.opt.title = false
+vim.opt.conceallevel = 2
 
 -- Navigate vim panes better
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { desc = "Move Up" })
