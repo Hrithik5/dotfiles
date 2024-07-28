@@ -61,7 +61,7 @@ return {
 		})
 
 		-- Additional utility: Telescope integration for Neoclip
-		vim.keymap.set("n", "<leader>o", "<cmd>Telescope neoclip<CR>", { desc = "Telescope Neoclip" })
+		vim.keymap.set("n", "<leader>nt", "<cmd>Telescope neoclip<CR>", { desc = "Telescope Neoclip" })
 
 		-- Add more mappings or configurations as needed
 	end,
