@@ -1,7 +1,3 @@
-# -----------------------------------------------------------------------------
-# Dracula skin
-# -----------------------------------------------------------------------------
-
 # Styles...
 foreground: &foreground "#f8f8f2"
 background: &background "#282a36"
@@ -111,5 +107,3 @@ k9s:
       indicator:
         fgColor: *foreground
         bgColor: *purple
-        toggleOnColor: *green
-        toggleOffColor: *cyan
