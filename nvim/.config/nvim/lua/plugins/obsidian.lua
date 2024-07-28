@@ -40,43 +40,5 @@ return {
 				},
 			},
 		})
-
-		-- Keymaps for Obsidian
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>on",
-			":ObsidianNewNote<CR>",
-			{ noremap = true, silent = true, desc = "ObsidianNewNote" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>ot",
-			":ObsidianToday<CR>",
-			{ noremap = true, silent = true, desc = "ObsidianToday" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>oy",
-			":ObsidianYesterday<CR>",
-			{ noremap = true, silent = true, desc = "ObsidianYesterday" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>of",
-			":ObsidianSearch<CR>",
-			{ noremap = true, silent = true, desc = "ObsidianSearch" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>ob",
-			":ObsidianBacklinks<CR>",
-			{ noremap = true, silent = true, desc = "ObsidianBacklinks" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>ol",
-			":ObsidianLink<CR>",
-			{ noremap = true, silent = true, desc = "ObsidianLink" }
-		)
 	end,
 }
