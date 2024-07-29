@@ -6,7 +6,6 @@ return {
 
 		lint.linters_by_ft = {
 			python = { "pylint" },
-			go = { "golangci-lint" },
 			docker = { "hadolint" },
 			cpp = { "cpplint" },
 			yaml = { "yamllint" },
