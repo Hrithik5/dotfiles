@@ -171,7 +171,7 @@ alias lt="eza --tree --level=2 --long --icons --git"
 
 alias la=tree
 alias cat=bat
-alias fzf="fzf --preview="bat {}""
+alias fzfp="fzf --preview="bat {}""
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
