@@ -39,14 +39,6 @@ return {
 				},
 				terraformls = {},
 				clangd = {},
-				tflint = {},
-				tsserver = {
-					init_options = {
-						preferences = {
-							disableSuggestions = true,
-						},
-					},
-				},
 			}
 
 			for server, config in pairs(servers) do
