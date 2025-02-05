@@ -33,45 +33,7 @@ vim.keymap.set("n", "<leader>rft", ":RunFile tab<CR>", { desc = "Run file in new
 vim.keymap.set("n", "<leader>rp", ":RunProject<CR>", { desc = "Run the project" })
 vim.keymap.set("n", "<leader>rc", ":RunClose<CR>", { desc = "Close the runner window" })
 
---Obsidian Plugin
-vim.keymap.set("n", "<leader>on", ":ObsidianNew<CR>", { noremap = true, silent = true, desc = "ObsidianNewNote" })
-vim.keymap.set("n", "<leader>or", ":ObsidianRename<CR>", { noremap = true, silent = true, desc = "ObsidianRename" })
-vim.keymap.set(
-	"n",
-	"<leader>ot",
-	":ObsidianToggleCheckbox<CR>",
-	{ noremap = true, silent = true, desc = "ObsidianToggleCheckbox" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>oq",
-	":ObsidianQuickSwitch<CR>",
-	{ noremap = true, silent = true, desc = "ObsidianQuickSwitch" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>ow",
-	":ObsidianWorkspace<CR>",
-	{ noremap = true, silent = true, desc = "ObsidianWorkspace" }
-)
-vim.keymap.set("n", "<leader>ot", ":ObsidianToday<CR>", { noremap = true, silent = true, desc = "ObsidianToday" })
-vim.keymap.set(
-	"n",
-	"<leader>oy",
-	":ObsidianYesterday<CR>",
-	{ noremap = true, silent = true, desc = "ObsidianYesterday" }
-)
-vim.keymap.set("n", "<leader>of", ":ObsidianSearch<CR>", { noremap = true, silent = true, desc = "ObsidianSearch" })
-vim.keymap.set(
-	"n",
-	"<leader>ob",
-	":ObsidianBacklinks<CR>",
-	{ noremap = true, silent = true, desc = "ObsidianBacklinks" }
-)
-vim.keymap.set("n", "<leader>ol", ":ObsidianLink<CR>", { noremap = true, silent = true, desc = "ObsidianLink" })
-
 -- Noice Plugin
-vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Messageses" })
 vim.keymap.set("n", "<leader>nh", "<cmd>:Noice telescope<CR>", { desc = "Noice Message history in Telescope" })
 
 -- Git-blame plugin
