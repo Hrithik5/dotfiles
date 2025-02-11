@@ -112,6 +112,11 @@ source $ZSH/oh-my-zsh.sh
 # Prevent zsh from creating Zcompdump files 
 unsetopt EXTENDED_HISTORY
 
+#gh-dash
+alias ghboard="gh dash"
+alias ghr="gh pr review"  # Quick review command
+alias ghm="gh pr merge"  # Merge PRs easily
+
 
 #Git
 alias gc="git commit -m"
