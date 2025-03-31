@@ -1,11 +1,11 @@
 return {
 	"nvimtools/none-ls.nvim",
-  event = "VeryLazy",
+	event = "VeryLazy",
 	dependencies = {
 		"nvimtools/none-ls-extras.nvim",
 	},
 	config = function()
-		local none_ls = require("none-ls")
+		local none_ls = require("null-ls")
 		none_ls.setup({
 			sources = {
 				-- Formatting
@@ -29,4 +29,3 @@ return {
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format Code" })
 	end,
 }
-
