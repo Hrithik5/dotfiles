@@ -181,6 +181,7 @@ alias fzf='fzf --preview="bat --color=always {}"'
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Enable shell autocompletion
 source <(kubectl completion zsh)
