@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions docker aws terraform web-search zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -242,3 +242,4 @@ compinit
 # End of Docker CLI completions
 #
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"
