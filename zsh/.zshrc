@@ -29,6 +29,10 @@ source $ZSH/oh-my-zsh.sh
 # Prevent zsh from creating Zcompdump files 
 unsetopt EXTENDED_HISTORY
 
+# Env Variables for AWS
+export AWS_PROFILE=dev
+export AWS_REGION=ap-south-1
+
 #gh-dash
 alias ghboard="gh dash"
 alias ghr="gh pr review"
