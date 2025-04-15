@@ -1,17 +1,3 @@
-# --- Powerlevel10k Prompt DISABLED in favor of Starship ---
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# --- End Powerlevel10k ---
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -87,6 +73,7 @@ alias tk='tmux kill-session -t '
 alias tl='tmux list-sessions'
 alias td='tmux detach'
 alias tc='clear; tmux clear-history; clear'
+alias tss=tmux-session-switch
 
 # EZA ->
 alias ls="eza --color=always --grid --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
@@ -101,6 +88,21 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+#Tmux list-sessions into fzf 
+tmux-session-switch() {
+  local session
+  session=$(tmux list-sessions -F "#S" | fzf --prompt=" Pick a tmux session: " \
+    --height=30% --layout=reverse --border=rounded)
+
+  if [ -n "$session" ]; then
+    if [ -n "$TMUX" ]; then
+      tmux switch-client -t "$session"
+    else
+      tmux attach-session -t "$session"
+    fi
+  fi
+}
 
 # Enable shell autocompletion
 source <(kubectl completion zsh)
