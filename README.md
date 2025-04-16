@@ -3,8 +3,6 @@
 A modern, minimal, and modular set of dotfiles for **macOS** crafted for productivity, DevOps, and a clean terminal aesthetic.  
 Built with love for tools like **Zsh**, **Starship**, **Tmux**, **Neovim**, **fzf**, **Docker**, **Kubernetes**, and more.
 
-> 🔗 GitHub: [https://github.com/Hrithik5/dotfiles](https://github.com/Hrithik5/dotfiles)
-
 ---
 
 ## 📦 Features
