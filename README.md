@@ -1,46 +1,59 @@
-# My Dotfiles
+# ⚙️ Hrithik's Dotfiles
 
-This is where I keep all of my dotfiles.
+A modern, minimal, and modular set of dotfiles for **macOS** crafted for productivity, DevOps, and a clean terminal aesthetic.  
+Built with love for tools like **Zsh**, **Starship**, **Tmux**, **Neovim**, **fzf**, **Docker**, **Kubernetes**, and more.
 
-Feel free to copy any of the dotfiles or scripts you find here, as much of it is just copied from other's dotfiles. I wouldn't recommend cloning my entire setup, but instead to try copying bits and pieces as you put together your own dotfiles unique to you.
+> 🔗 GitHub: [https://github.com/Hrithik5/dotfiles](https://github.com/Hrithik5/dotfiles)
 
-In the future I'm planning on adding an install script to make it easier for others to use my configs. For now, you'll have to piece things together yourself, though.
+---
 
+## 📦 Features
 
-### Ensure you have the following installed on your system
+✅ Minimal `starship` prompt with icons and DevOps-friendly info  
+✅ Smart `fzf-tab` completions (with previews) for commands, `cd`, history, etc.  
+✅ Fast `tmux` session management with `tss`  
+✅ Modular `.zshrc` for easy config and navigation  
+✅ Aliases for Git, Docker, Kubernetes, Terraform, and more  
+✅ Configured with `stow` for easy symlink management  
+✅ Pre-configured with tools like `eza`, `bat`, `zoxide`, and `fzf`
 
-<!---
-### For linux run the following steps
-```
-sudo apt install build-essential
+---
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+## 🚀 How to Use This Dotfiles Repo
 
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/{name_of_the_dir}/.profile
+You can use this repo for your own system setup by following these steps:
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+1. ⚙️ Installation Steps [Prerequisites]
+    ```bash
+    brew install stow starship zoxide fzf bat eza tmux \
+      kubectl awscli terraform gh \
+      zsh-autosuggestions zsh-syntax-highlighting
+    ```
 
-Verify with this -> brew doctor
+2. Additional Step for better [Tab-completion preview when using commands like cd, git]
+    ```bash
+    git clone https://github.com/Aloxaf/fzf-tab ~/.oh-my-zsh/custom/plugins/fzf-tab
 
-```
---->
+3. Fork or the repo:
+   ```bash
+   git clone https://github.com/Hrithik5/dotfiles.git ~/dotfiles
+   cd ~/dotfiles
 
-```
-Install brew from offical website.
-brew install git
-brew install stow
-```
+4. Symlink all the configs
+    ```bash
+    stow . 
 
-### Installation
+## 🛠 Dotfiles Customization
 
-Checkout the dotfile repo into your $HOME directory using git
+Want to tweak something?
 
-```
-git clone https://github.com/Hrithik5/dotfiles.git
-cd dotfiles
-```
-then use GNU stow to create symlink
+1. .zshrc is cleanly organized by category (plugins, aliases, UI, completions)
+2. You can add your own scripts to ~/dotfiles/scripts and source them
+3. Modify Starship appearance via .config/starship.toml
+4. Add/remove modules from stow as needed
 
-```
-stow .
-```
+## 📄 License
+
+MIT License. Use it freely, customize it, and improve your terminal life 💻
+
+“Dotfiles are meant to be personal — make them yours.”
