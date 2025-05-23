@@ -6,7 +6,7 @@ return {
 			filetype = {
 				cpp = function()
 					local cpp_base = {
-						"cd $dir &&",
+						"cd \"$dir\" &&",
 						"g++ -std=c++17 $fileName -o",
 						"/tmp/$fileNameWithoutExt",
 					}
