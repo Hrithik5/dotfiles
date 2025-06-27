@@ -3,36 +3,38 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
-		local todo_comments = require("todo-comments")
+		local todo = require("todo-comments")
+		todo.setup()
+		local map = vim.keymap.set
+		local opts = { noremap = true, silent = true }
 
-		-- Keymap settings
-		local keymap = vim.keymap
+		-- Navigation
+		map("n", "]c", todo.jump_next, { desc = "Next todo comment", table.unpack(opts) })
+		map("n", "[c", todo.jump_prev, { desc = "Previous todo comment", table.unpack(opts) })
 
-		-- Jump to next todo comment
-		keymap.set("n", "]c", function()
-			todo_comments.jump_next()
-		end, { desc = "Next todo comment" })
+		-- Viewing
+		map("n", "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todos in Trouble", table.unpack(opts) })
+		map("n", "<leader>tl", "<cmd>TodoLocList<CR>", { desc = "Todos in Location List", table.unpack(opts) })
+		map("n", "<leader>tq", "<cmd>TodoQuickFix<CR>", { desc = "Todos in Quickfix List", table.unpack(opts) })
+		map("n", "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Search Todos (Telescope)", table.unpack(opts) })
 
-		-- Jump to previous todo comment
-		keymap.set("n", "[c", function()
-			todo_comments.jump_prev()
-		end, { desc = "Previous todo comment" })
-
-		-- Open a list of todo comments
-		keymap.set("n", "<leader>td", ":TodoTrouble<CR>", { desc = "Open todo list in Trouble" })
-		keymap.set("n", "<leader>cl", ":TodoLocList<CR>", { desc = "Open todo list in Location List" })
-		keymap.set("n", "<leader>cq", ":TodoQuickFix<CR>", { desc = "Open todo list in Quickfix" })
-		keymap.set("n", "<leader>ct", ":TodoTelescope<CR>", { desc = "Search todos with Telescope" })
-
-		-- Setup todo-comments with default configuration
-		todo_comments.setup()
+		-- Toggle highlight visibility
+		map("n", "<leader>th", function()
+			vim.cmd("TodoTroubleToggle")
+		end, { desc = "Toggle Todo Trouble View", table.unpack(opts) })
 	end,
 }
 
--- TODO: This is a todo comment
---FIX: This is a fix comment
---HACK: This is a hack comment
---WARN: This is a warning comment
---PERF: This is a performance comment
---NOTE: This is a note comment
---TEST: This is a test comment ]]
+-- TODO: Refactor this function
+
+-- FIXME: This logic is incorrect for edge cases
+
+-- NOTE: Remember to update this before release
+
+-- HACK: Temporary workaround for bug
+
+-- PERF: Consider optimizing this loop
+
+-- WARNING: Deprecated usage, replace soon
+
+-- BUG: This fails with large inputs
