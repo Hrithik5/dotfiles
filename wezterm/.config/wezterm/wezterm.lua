@@ -28,10 +28,10 @@ wezterm.on("toggle-ligatures", toggle_ligatures)
 -- Returns color scheme dependant on operating system theme setting (dark/light)
 local function color_scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Catppuccin Mocha"
+		return "rose-pine"
 	else
-		-- return "Tokyo Night Moon"
-		return "Catppuccin Mocha"
+		return "rose-pine"
+		-- return "Catppuccin Mocha"
 	end
 end
 
