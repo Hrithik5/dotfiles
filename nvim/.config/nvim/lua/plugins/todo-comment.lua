@@ -8,20 +8,26 @@ return {
 		local map = vim.keymap.set
 		local opts = { noremap = true, silent = true }
 
+		-- Utility to merge opts with description
+		local function with_desc(desc)
+			local merged = vim.tbl_extend("force", opts, { desc = desc })
+			return merged
+		end
+
 		-- Navigation
-		-- map("n", "]c", todo.jump_next, { desc = "Next todo comment", table.unpack(opts) })
-		-- map("n", "[c", todo.jump_prev, { desc = "Previous todo comment", table.unpack(opts) })
+		map("n", "]c", todo.jump_next, with_desc("Next todo comment"))
+		map("n", "[c", todo.jump_prev, with_desc("Previous todo comment"))
 
 		-- Viewing
-		map("n", "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todos in Trouble", table.unpack(opts) })
-		map("n", "<leader>tl", "<cmd>TodoLocList<CR>", { desc = "Todos in Location List", table.unpack(opts) })
-		map("n", "<leader>tq", "<cmd>TodoQuickFix<CR>", { desc = "Todos in Quickfix List", table.unpack(opts) })
-		map("n", "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Search Todos (Telescope)", table.unpack(opts) })
+		map("n", "<leader>td", "<cmd>TodoTrouble<CR>", with_desc("Todos in Trouble"))
+		map("n", "<leader>tl", "<cmd>TodoLocList<CR>", with_desc("Todos in Location List"))
+		map("n", "<leader>tq", "<cmd>TodoQuickFix<CR>", with_desc("Todos in Quickfix List"))
+		map("n", "<leader>tt", "<cmd>TodoTelescope<CR>", with_desc("Search Todos (Telescope)"))
 
 		-- Toggle highlight visibility
 		map("n", "<leader>th", function()
 			vim.cmd("TodoTroubleToggle")
-		end, { desc = "Toggle Todo Trouble View", table.unpack(opts) })
+		end, with_desc("Toggle Todo Trouble View"))
 	end,
 }
 
