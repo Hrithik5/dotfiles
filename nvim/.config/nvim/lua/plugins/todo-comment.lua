@@ -9,8 +9,8 @@ return {
 		local opts = { noremap = true, silent = true }
 
 		-- Navigation
-		map("n", "]c", todo.jump_next, { desc = "Next todo comment", table.unpack(opts) })
-		map("n", "[c", todo.jump_prev, { desc = "Previous todo comment", table.unpack(opts) })
+		-- map("n", "]c", todo.jump_next, { desc = "Next todo comment", table.unpack(opts) })
+		-- map("n", "[c", todo.jump_prev, { desc = "Previous todo comment", table.unpack(opts) })
 
 		-- Viewing
 		map("n", "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todos in Trouble", table.unpack(opts) })
