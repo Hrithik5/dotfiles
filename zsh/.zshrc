@@ -188,6 +188,12 @@ bindkey '^R' fzf-history-widget
 
 eval "$(starship init zsh)"
 
+# =============================
+#       CONDA INITIALISE
+# =============================
+eval "$(conda "shell.$(basename "${SHELL}")" hook)"
+
+
 # Enable AWS module in Starship if AWS_PROFILE or AWS_REGION is set
 if [[ -n "$AWS_PROFILE" || -n "$AWS_REGION" ]]; then
   export STARSHIP_CONFIG_DISABLE_MODULES=""
@@ -219,3 +225,6 @@ source <(kubectl completion zsh)
 # FZF shell integration
 source <(fzf --zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Created by `pipx` on 2025-11-19 19:52:27
+export PATH="$PATH:/Users/hrithikchauhan/.local/bin"
