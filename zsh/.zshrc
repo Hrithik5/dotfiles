@@ -2,6 +2,8 @@
 # Hrithik Chauhan's .zshrc - Clean & Modular
 # ===========================================
 
+# Force conda to take priority
+export PATH="$HOME/miniconda3/bin:$PATH"
 # =============================
 #         ZSH SETTINGS
 # =============================
