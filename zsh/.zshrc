@@ -107,6 +107,7 @@ alias la=tree
 # Others
 alias cat=bat
 alias fzf='fzf --preview="bat --color=always {}"'
+alias T=terraform
 
 # =============================
 #         FUNCTIONS
