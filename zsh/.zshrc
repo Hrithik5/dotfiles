@@ -106,7 +106,8 @@ alias la=tree
 
 # Others
 alias cat=bat
-alias fzf='fzf --preview="bat --color=always {}"'
+alias fzf='fzf --preview="[[ -f {} ]] && bat --color=always --style=numbers --line-range=:500 {} || tree -C {} | head -200"'
+
 alias T=terraform
 
 # =============================

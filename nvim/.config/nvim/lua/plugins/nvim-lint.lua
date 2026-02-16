@@ -7,8 +7,7 @@ return {
 		lint.linters_by_ft = {
 			python = { "pylint" },
 			docker = { "hadolint" },
-			cpp = { "cpplint" },
-			yaml = { "yamllint" },
+      yaml = { "yamllint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
