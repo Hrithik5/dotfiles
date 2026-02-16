@@ -231,3 +231,6 @@ source <(fzf --zsh)
 
 # Created by `pipx` on 2025-11-19 19:52:27
 export PATH="$PATH:/Users/hrithikchauhan/.local/bin"
+
+# Added by Antigravity
+export PATH="/Users/hrithikchauhan/.antigravity/antigravity/bin:$PATH"
