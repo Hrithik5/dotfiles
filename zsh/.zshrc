@@ -39,6 +39,8 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export LANG="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # =============================
 #         ALIASES
@@ -234,3 +236,6 @@ export PATH="$PATH:/Users/hrithikchauhan/.local/bin"
 
 # Added by Antigravity
 export PATH="/Users/hrithikchauhan/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/hrithikchauhan/.antigravity-ide/antigravity-ide/bin:$PATH"
