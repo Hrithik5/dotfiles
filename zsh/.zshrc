@@ -41,6 +41,7 @@ export LANG="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 export PATH="$JAVA_HOME/bin:$PATH"
+export SPARK_LOCAL_IP=127.0.0.1
 
 # =============================
 #         ALIASES
